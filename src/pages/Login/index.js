@@ -7,14 +7,14 @@ import { fetchLogin } from "@/store/modules/user";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const dispatch = useDispatch()
-  const navigate = useDispatch()
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const onFinsh = async (Values) => {
     // 触发异步action
-    await dispatch(fetchLogin(Values))
+    await dispatch(fetchLogin(Values));
     // 跳转首页
-    navigate('/')
-    message.success('登录成功')
+    navigate("/");
+    message.success("登录成功");
   };
 
   return (
